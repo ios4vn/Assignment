@@ -1,0 +1,13 @@
+disabled_rules:
+    - force_try
+opt_in_rules:
+    - missing_docs
+excluded:
+    - Pods
+    - R.generated.swift
+#function_parameter_count: 5
+function_parameter_count: 10
+#type_body_length: 1000
+type_body_length:
+    - 300
+    - 2000

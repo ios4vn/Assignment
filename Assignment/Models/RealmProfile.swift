@@ -11,9 +11,20 @@ import RealmSwift
 
 class RealmProfile: Object {
 
-    dynamic var identifier: String = ""
-    dynamic var name: String = ""
-    dynamic var birthday: Date = Date()
-    dynamic var email: String = ""
-    
+    @objc dynamic var identifier: String?
+    @objc dynamic var name: String?
+    @objc dynamic var birthday: String?
+    @objc dynamic var email: String?
+
+    convenience init(_ profile: Profile) {
+        self.init()
+        identifier = profile.identifier
+        name = profile.name ?? ""
+        birthday = profile.birthday ?? ""
+        email = profile.name ?? ""
+    }
+
+    func convert() -> Profile {
+        return Profile(identifier: identifier, name: name, birthday: birthday, email: email)
+    }
 }

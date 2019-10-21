@@ -66,7 +66,20 @@
                     <view key="view" contentMode="scaleToFill" id="Zh5-Kg-pVn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-nF-iRT">
+                                <rect key="frame" x="141" y="433" width="132" height="30"/>
+                                <state key="normal" title="Login via Facebook"/>
+                                <connections>
+                                    <action selector="loginWithReadPermissions" destination="Igp-y2-eB1" eventType="touchUpInside" id="oeO-y9-Tuq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Soi-nF-iRT" firstAttribute="centerX" secondItem="Zh5-Kg-pVn" secondAttribute="centerX" id="caX-po-ZlW"/>
+                            <constraint firstItem="Soi-nF-iRT" firstAttribute="centerY" secondItem="Zh5-Kg-pVn" secondAttribute="centerY" id="dhV-iV-AnJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KK7-Wm-DkG"/>
                     </view>
                 </viewController>
