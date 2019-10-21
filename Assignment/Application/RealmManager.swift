@@ -10,25 +10,28 @@ import UIKit
 import RealmSwift
 
 class RealmManager {
-    
+
     private let realm = try! Realm()
-    
+
     static let shared = RealmManager()
-    
+
     func getProfile() -> RealmProfile? {
         let profiles = realm.objects(RealmProfile.self)
         return profiles.first
     }
-    
+
     func persit(_ profile: Profile) {
-//        let objs = printers.map { RealmPrintRecord(record: $0) }
-//        try! realm.write {
-//            realm.add(objs, update: true)
-//        }
+        let realmProfile = RealmProfile(profile)
+        try! realm.write {
+            realm.add(realmProfile)
+        }
     }
-    
+
     func clear() {
-        realm.deleteAll()
+        try! realm.write {
+            let profiles = realm.objects(RealmProfile.self)
+            realm.delete(profiles)
+        }
     }
 
 }

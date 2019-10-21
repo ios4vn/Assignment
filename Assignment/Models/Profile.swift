@@ -9,10 +9,10 @@
 import UIKit
 
 struct Profile {
-    
-    var identifier: String = ""
-    var name: String = ""
-    var birthday: Date = Date()
-    var email: String = ""
+
+    var identifier: String?
+    var name: String?
+    var birthday: String?
+    var email: String?
 
 }
