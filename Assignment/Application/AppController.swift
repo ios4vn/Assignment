@@ -16,7 +16,7 @@ struct NotificationKeys {
 }
 
 struct UserInfoKeys {
-    static let profile = "profile"
+    static let profile = "Profile"
 }
 
 class AppController: NSObject {
@@ -66,4 +66,8 @@ class AppController: NSObject {
         profileViewController.presentedViewController?.dismiss(animated: true)
     }
 
+    deinit {
+        notificationCenter.removeObserver(self, name: Notification.Name(rawValue: NotificationKeys.userDidLogin), object: nil)
+        notificationCenter.removeObserver(self, name: Notification.Name(rawValue: NotificationKeys.userDidLogout), object: nil)
+    }
 }

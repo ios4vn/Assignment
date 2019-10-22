@@ -21,7 +21,7 @@ class RealmProfile: Object {
         identifier = profile.identifier
         name = profile.name ?? ""
         birthday = profile.birthday ?? ""
-        email = profile.name ?? ""
+        email = profile.email ?? ""
     }
 
     func convert() -> Profile {

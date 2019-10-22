@@ -6,7 +6,7 @@
 //  Copyright © 2019 ios4vn. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import FacebookCore
 import FacebookLogin
 
@@ -55,10 +55,6 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func logOutAction(_ sender: UIButton) {
         LoginManager().logOut()
         RealmManager.shared.clear()
@@ -67,7 +63,7 @@ class ProfileViewController: UIViewController {
 
 }
 
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.profile != nil {

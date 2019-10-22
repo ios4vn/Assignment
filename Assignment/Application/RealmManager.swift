@@ -20,7 +20,7 @@ class RealmManager {
         return profiles.first
     }
 
-    func persit(_ profile: Profile) {
+    func persist(_ profile: Profile) {
         let realmProfile = RealmProfile(profile)
         try! realm.write {
             realm.add(realmProfile)
