@@ -10,9 +10,9 @@ import XCTest
 @testable import Assignment
 
 class ProfileViewControllerTests: XCTestCase {
-    
+
     var sut: ProfileViewController!
-    
+
     override func setUp() {
         super.setUp()
         guard let profileViewController = R.storyboard.main.profileViewController() else {
@@ -21,11 +21,11 @@ class ProfileViewControllerTests: XCTestCase {
         sut = profileViewController
         _ = sut.view
     }
-    
+
     func test_hasTableView() {
         XCTAssertNotNil(sut.tableView, "Table view doesn't exist")
     }
-    
+
     func test_bindData() {
         sut.profile = nil
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)

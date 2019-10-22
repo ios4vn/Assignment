@@ -19,7 +19,7 @@ class ProfileTests: XCTestCase {
         XCTAssertEqual(realmProfile.birthday, profile.birthday)
         XCTAssertEqual(realmProfile.email, profile.email)
     }
-    
+
     func test_revert() {
         let realmProfile = RealmProfile()
         realmProfile.identifier = UUID().uuidString
